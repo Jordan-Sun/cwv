@@ -12,15 +12,16 @@ lcw() {
 }
 ```
 
-## How to import
+## How to use
+
 To use `cwv`, you will first need to install `w3m` and `less` from your package manager.
 
-`less` comes pre-installed on raspberry pi os, and one can install `w3m` by running `sudo apt-get install w3m`.
+On Raspberry Pi OS, `less` comes pre-installed and one can install `w3m` by running `sudo apt-get install w3m`.
 
-Then import `cwv` by simply running `source cwv`. If you wish, you may add this to `~/.bashrc` or `~/.zshrc`.
-
-## How to use
+To run `cwv`, simply type
 ```
 cwv class [folder] [page]
 ```
 This will present the url "https://classes.engineering.wustl.edu/class/folder/page"
+
+If you wish, you can add `cwv` to your `/bin` folder.
