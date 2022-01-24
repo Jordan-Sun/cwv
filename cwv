@@ -1,19 +1,16 @@
+#!/bin/sh
 # viewer for washu engineering course website of the form
 # https://classes.engineering.wustl.edu/$1/$2/$3
-cwv() {
-    if [ -z "$1" ]
-    then
-        echo "Usage: $0 class [folder] [page]"
-	echo "Views https://classes.engineering.wustl.edu/class/folder/page"
-    elif [ -z "$2" ]
-    then
-        w3m -dump "https://classes.engineering.wustl.edu/$1/" | less
-    elif [ -z "$3" ]
-    then
-        w3m -dump "https://classes.engineering.wustl.edu/$1/$2/" | less
-    else
-        w3m -dump "https://classes.engineering.wustl.edu/$1/$2/$3" | less
-#    recursive parsing strategy
-#        cwv "$1/$2" ${@:3}
-    fi
-}
+if [ -z "$1" ]
+then
+    echo "Usage: $0 class [folder] [page]"
+    echo "Views https://classes.engineering.wustl.edu/class/folder/page"
+elif [ -z "$2" ]
+then
+    w3m -dump "https://classes.engineering.wustl.edu/$1/" | less
+elif [ -z "$3" ]
+then
+    w3m -dump "https://classes.engineering.wustl.edu/$1/$2/" | less
+else
+    w3m -dump "https://classes.engineering.wustl.edu/$1/$2/$3" | less
+fi
